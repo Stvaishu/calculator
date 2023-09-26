@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="calculator.css">
+        <title>
+            Calculator
+        </title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="Calculator">
+                <input type="text" placeholder="0" id="output-screen">
+                <button onclick="Clear()" aria-label="clear button">AC</button>
+                <button onclick="del()" aria-label="delete element">Del</button>
+                <button onclick="Display('%')" aria-label="Modulo operation">%</button>
+                <button onclick="Display('/')" aria-label="Division operation">/</button>
+                <button onclick="Display('7')" >7</button>
+                <button onclick="Display('8')">8</button>
+                <button onclick="Display('9')">9</button>
+                <button onclick="Display('*')" aria-label="Multiplication operation">*</button>
+                <button onclick="Display('4')">4</button>
+                <button onclick="Display('5')">5</button>
+                <button onclick="Display('6')">6</button>
+                <button onclick="Display('-')" aria-label="subtraction operation">-</button>
+                <button onclick="Display('1')">1</button>
+                <button onclick="Display('2')">2</button>
+                <button onclick="Display('3')">3</button>
+                <button onclick="Display('+')" aria-label="Addition operation">+</button>
+                <button onclick="Display('.')"aria-label="Point">.</button>
+                <button onclick="Display('0')">0</button>
+                <button onclick="Calculate()" class="equal" aria="to check the output">=</button>
+            </div>
+        </div>
+        <script>
+            let ouputScreen =document.getElementById("output-screen");
+
+            
+            function Display(num){
+                ouputScreen.value += num;
+            }
+            function Calculate(){
+                    ouputScreen.value=eval(ouputScreen.value);
+
+                
+            }
+            function Clear(){
+                ouputScreen.value="";
+            }
+            function del(){
+                ouputScreen.value =ouputScreen.value.slice(0,-1);
+            }
+        </script>
+    </body>
+</html>
